@@ -1,0 +1,28 @@
+@mixin devicePerformance() {
+	// Improve performance on mobile/tablet
+	@include prefix(transform, translateZ(0));
+}
+
+@mixin improveAntiAlias() {
+	// Improve aliasing on mobile/tablet
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin fontSmooth() {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin forceBlockLevel() {
+	// Transforms need to be block-level to work
+	display: inline-block;
+	vertical-align: middle;
+}
+
+@mixin hacks() {
+	@include forceBlockLevel();
+	@include devicePerformance();
+	@include improveAntiAlias();
+	@include fontSmooth();
+}

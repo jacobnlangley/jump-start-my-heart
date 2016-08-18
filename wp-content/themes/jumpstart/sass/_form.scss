@@ -1,0 +1,458 @@
+//Base input FX styles
+select, textarea {
+	appearance:none;
+	border-radius:0px;
+	background-color:$white;
+}
+
+input, textarea, select {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	border:$px / 16 solid $bam-blk;
+	margin: $em * 0.5 0;
+	padding: $em * 1;
+	width: calc(100% - 2em);
+	vertical-align: top;
+}
+
+.input-fx {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 1em;
+	max-width: 350px;
+	width: calc(100% - 2em);
+	vertical-align: top;
+
+    .field {
+    	position: relative;
+    	display: block;
+    	float: right;
+    	padding: 0.8em;
+    	width: 60%;
+    	border: none;
+    	border-radius: 0;
+    	background: #f0f0f0;
+    	color: #aaa;
+    	font-weight: 400;
+    	font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    	-webkit-appearance: none; /* for box shadows to show on iOS */
+
+        &:focus {
+            outline: none;
+            font-size: 1.5em;
+        }
+    }
+
+    .label {
+    	display: inline-block;
+    	float: right;
+    	padding: 0 1em;
+    	width: 40%;
+    	color: #696969;
+    	font-weight: bold;
+    	font-size: 70.25%;
+    	-webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    	-webkit-touch-callout: none;
+    	-webkit-user-select: none;
+    	-khtml-user-select: none;
+    	-moz-user-select: none;
+    	-ms-user-select: none;
+    	user-select: none;
+
+        .content {
+        	position: relative;
+        	display: block;
+        	padding: 1.6em 0;
+        	width: 100%;
+        }
+    }
+}
+
+//Custom FX
+.pushing-daisies {
+	overflow: hidden;
+
+    .field-pushing-daisies {
+    	width: 100%;
+    	background: transparent;
+    	padding: 0.5em;
+    	margin-bottom: 2em;
+    	color: #f9f7f6;
+    	z-index: 100;
+    	opacity: 0;
+
+        &:focus {
+            opacity: 1;
+        	-webkit-transition: opacity 0s 0.2s;
+        	transition: opacity 0s 0.2s;
+        }
+    }
+
+    .filled .field-pushing-daisies {
+    	opacity: 1;
+    	-webkit-transition: opacity 0s 0.2s;
+    	transition: opacity 0s 0.2s;
+    }
+
+    .label-pushing-daisies {
+    	width: 100%;
+    	position: absolute;
+    	text-align: left;
+    	padding: 0.5em 0;
+    	pointer-events: none;
+    	font-size: 1em;
+
+        .content-pushing-daisies {
+        	padding: 0;
+        	-webkit-transform-origin: 0 0;
+        	transform-origin: 0 0;
+        	-webkit-transition: -webkit-transform 0.2s, color 0.2s;
+        	transition: transform 0.2s, color 0.2s;
+        }
+    }
+
+    .label-pushing-daisies::before,
+    .label-pushing-daisies::after {
+    	content: '';
+    	position: absolute;
+    	width: 100%;
+    	left: 0;
+    }
+
+    .label-pushing-daisies::before {
+    	height: 100%;
+    	background: #A8A8A8;
+    	top: 0;
+    	-webkit-transform: translate3d(0, -100%, 0);
+    	transform: translate3d(0, -100%, 0);
+    	-webkit-transition: -webkit-transform 0.2s;
+    	transition: transform 0.2s;
+    }
+
+    .label-pushing-daisies::after {
+    	height: 2px;
+    	background: #A8A8A8;
+    	top: 100%;
+    	-webkit-transition: opacity 0.2s;
+    	transition: opacity 0.2s;
+    }
+}
+
+
+.label-pushing-daisies::before,
+.label-pushing-daisies::after,
+.label-content--pushing-daisies,
+.field-pushing-daisies:focus,
+.filled .field-pushing-daisies {
+	-webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.field-pushing-daisies:focus + .label-pushing-daisies::before,
+.filled .label-pushing-daisies::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.field-pushing-daisies:focus + .label-pushing-daisies::after,
+.filled .label-pushing-daisies::after {
+	opacity: 0;
+}
+
+.field-pushing-daisies:focus + .label-pushing-daisies .label-content-pushing-daisies,
+.filled .label-pushing-daisies .label-content-pushing-daisies {
+	color: #cbc4c6;
+	-webkit-transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
+	transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
+}
+
+
+//Custom Select
+/* Default custom select styles */
+div.cs-select {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	margin:$em * 0.5 0;
+	text-align: left;
+	background: #fff;
+	z-index: 100;
+	width: 100%;
+	max-width: 500px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div.cs-select:focus {
+	outline: none; /* For better accessibility add a style for this in your skin */
+}
+
+.cs-select select {
+	display: none;
+}
+
+.cs-select span {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	padding: 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Placeholder and selected option */
+.cs-select > span {
+	padding-right: 3em;
+}
+
+.cs-select > span::after,
+.cs-select .cs-selected span::after {
+	speak: none;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cs-select > span::after {
+	content: '\25BE';
+	right: 1em;
+}
+
+.cs-select .cs-selected span::after {
+	content: '\2713';
+	margin-left: 1em;
+}
+
+.cs-select.cs-active > span::after {
+	-webkit-transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) rotate(180deg);
+}
+
+div.cs-active {
+	z-index: 200;
+}
+
+/* Options */
+.cs-select .cs-options {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	background: #fff;
+	visibility: hidden;
+}
+
+.cs-select.cs-active .cs-options {
+	visibility: visible;
+}
+
+.cs-select ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.cs-select ul span {
+	padding: 1em;
+}
+
+.cs-select ul li.cs-focus span {
+	background-color: #ddd;
+}
+
+/* Optgroup and optgroup label */
+.cs-select li.cs-optgroup ul {
+	padding-left: 1em;
+}
+
+.cs-select li.cs-optgroup > span {
+	cursor: default;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot?-rdnm34');
+	src:url('../fonts/icomoon/icomoon.eot?#iefix-rdnm34') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff?-rdnm34') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf?-rdnm34') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg?-rdnm34#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.cs-skin-slide {
+	color: $bam-blk;
+	font-size: 1.5em;
+	width: 100%;
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-slide { font-size: 1.25em; width: 100%; }
+}
+
+div.cs-skin-slide::before {
+	content: '';
+	background: $white;
+	border:$px / 8 solid $bam-blk;
+	position: absolute;
+	width: inherit;
+	height: 100%;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cs-skin-slide.cs-active::before {
+	-webkit-transform: scale3d(1.1,3.5,1);
+	transform: scale3d(1.1,3.5,1);
+	height: 1000%;
+	border:none;
+}
+
+.cs-skin-slide > span {
+	height: 80px;
+	line-height: 32px;
+	-webkit-transition: text-indent 0.3s, opacity 0.3s;
+	transition: text-indent 0.3s, opacity 0.3s;
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-slide > span { height: 60px; line-height: 24px; }
+}
+
+.cs-skin-slide.cs-active > span {
+	text-indent: -290px;
+	opacity: 0;
+}
+
+.cs-skin-slide > span::after,
+.cs-skin-slide.cs-active > span::after {
+	font-family: 'icomoon';
+	content: '\e00f';
+	color: #eb7e7f;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.cs-skin-slide.cs-active > span::after {
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+.cs-skin-slide .cs-options {
+	background: transparent;
+	width: 100%;
+	height: 600%;
+	padding: 1.9em 0;
+	top: 0%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+@media screen and (max-width: 30em) {
+	.cs-skin-slide .cs-options { padding-top: 0em; }
+}
+
+.cs-skin-slide .cs-options li {
+	opacity: 0;
+	-webkit-transform: translate3d(30%,0,0);
+	transform: translate3d(30%,0,0);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.cs-skin-slide.cs-active .cs-options li {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	opacity: 1;
+}
+
+.cs-skin-slide.cs-active .cs-options li:first-child {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+.cs-skin-slide.cs-active .cs-options li:nth-child(2) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.cs-skin-slide.cs-active .cs-options li:nth-child(3) {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+.cs-skin-slide.cs-active .cs-options li:nth-child(4) {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+
+.cs-skin-slide.cs-active .cs-options li:nth-child(5) {
+	-webkit-transition-delay: 0.25s;
+	transition-delay: 0.25s;
+} /* more options need more delay declaration */
+
+.cs-skin-slide .cs-options li span {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+	font-size: 65%;
+	padding: 0.8em 1em 0.8em 2.5em;
+}
+
+.cs-skin-slide .cs-options li span:hover,
+.cs-skin-slide .cs-options li.cs-focus span,
+.cs-skin-slide .cs-options li.cs-selected span {
+	color: $bam-grn;
+	background: transparent;
+}
+
+.cs-skin-slide .cs-selected span::after {
+	content: '';
+}
+
+[class^="icon-"] span:before,
+[class*=" icon-"] span:before {
+	font-family: 'icomoon';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+	font-size: 1.5em;
+}
+
+.icon-camera span::before {
+	content: '\e00b';
+}
+
+.icon-money span::before {
+	content: '\e008';
+}
+
+.icon-heart span::before {
+	content: '\e00a';
+}
+
+.icon-food span::before {
+	content: '\e009';
+}
+
+.icon-shirt span::before {
+	content: '\e00c';
+}

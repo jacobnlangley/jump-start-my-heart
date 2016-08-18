@@ -1,0 +1,13 @@
+{
+  "name": "look-listen",
+  "dependencies": {
+    "jquery": "^1.11.1",
+    "fastclick": "1.0.6",
+    "foundation": "5.5.2",
+    "bourbon": "4.2.6",
+    "classie": "~1.0.1"
+  },
+  "resolutions": {
+    "jquery": ">= 2.1.0"
+  }
+}

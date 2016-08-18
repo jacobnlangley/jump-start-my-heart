@@ -1,0 +1,228 @@
+// header stuff only
+header {
+
+	background:rgba(0,0,0,0.85);
+	text-align:center;
+	height:$em * 3;
+	z-index:500;
+
+	.sticky {
+		background:rgba(0,0,0,0.85);
+		position: fixed;
+		z-index:501;
+		transition: all 1s ease-in-out;
+	}
+
+	h1 {
+		font-size:$em * 1.75;
+		line-height:$em * 3;
+		margin: 0 0;
+	}
+
+	a {
+		line-height:$em * 3;
+		font-size:$em * 0.9;
+	}
+
+	.mega-menu {
+		position:absolute;
+		top:48px;
+		left:0;
+		height:0;
+		width:100%;
+		background:rgba(0,0,0,.75);
+		z-index:5;
+		transition: height .25s linear;
+		-moz-transition: height .25s linear;
+		-webkit-transition: height .25s linear;
+
+
+		&.active {
+			height:auto;
+		}
+
+		.small-12.medium-3.columns {
+			padding:0 0;
+			min-height:$em * 15;
+			background:rgba(0,0,0,.45);
+		}
+
+		.cities,
+		.agents {
+			opacity:0;
+			height:0;
+			display:inline-block;
+			transition: opacity .5s ease-in-out;
+			-moz-transition: opacity .5s ease-in-out;
+			-webkit-transition: opacity .5s ease-in-out;
+			animation: lazier .8s;
+
+		}
+
+		.cities.active,
+		.agents.active {
+			opacity:1;
+			height:auto;
+			display:block;
+			background:rgba(0,0,0,.45);
+		}
+
+		.city,
+		.agent {
+			border-right:1px solid rgba(250,250,250,.2);
+			min-height:$em * 15;
+
+			h3 {
+				color:$white;
+				font-size:$em-val;
+			}
+		}
+
+	}
+
+	.mobile-menu {
+
+		&.sticky {
+			background:rgba(0,0,0,0.85);
+			position: fixed;
+			top:0;
+			right:0;
+			width:100%;
+			z-index:501;
+			transition: all 1s ease-in-out;
+		}
+
+		.menu-icon {
+			position:absolute;
+			top:14px;
+			right:14px;
+			cursor:pointer;
+
+			&.active {
+				> a {
+					span {
+						-webkit-transform: rotate(90deg);
+					}
+				}
+			}
+
+		}
+
+		.mobile-city-menu {
+			position:absolute;
+			top:48px;
+			left:-100%;
+			background:rgba(0,0,0,.85);
+			width:100%;
+			z-index:500;
+			@include opacity-transition;
+
+			&.active {
+				display:block;
+				opacity:1;
+				left:0;
+				height:100vh;
+			}
+
+			a {
+				color:$white;
+			}
+
+			h3 {
+				@include GTSectraBook;
+				font-size:$em-val * 1.25;
+				color:$white;
+				margin-bottom:0;
+			}
+
+
+			ul {
+				list-style:none;
+				-webkit-padding-start:0;
+				-moz-pading-start:0;
+				-ms-padding-start:0;
+				li {
+					@include GTSectraBook;
+					cursor:pointer;
+					a {
+						font-size:$em-val * 1;
+						color:$white;
+					}
+					&:hover {
+						background:lighten($black, 0.2);
+					}
+				}
+			}
+
+			ul.mobile-inline-list {
+				display:inline;
+				border-bottom:1px dotted $white;
+
+				a {
+					@include NeueHaasUnicaRegular;
+					font-size:$em-val * 0.75;
+				}
+
+				span {
+					color:$bam-grn;
+				}
+			}
+		}
+
+	}
+
+	.mobile-neighborhood-menu {
+		position:absolute;
+		top:48px;
+		left:-100%;
+		width:0px;
+		opacity:0;
+		background:$black;
+		min-height:600px;
+		z-index:500;
+		transition: opacity .1s ease-in-out, width .25s, left .25s, ;
+		-moz-transition:opacity .1s ease-in-out, width .25s, left .25s;
+		-webkit-transition:opacity .1s ease-in-out, width .25s, left .25s;
+
+		&.active {
+			display:inline-block;
+			width:100%;
+			left:0;
+			opacity:1;
+		}
+
+		.neighborhood-trigger {
+			font-size:$em * 1.25;
+		}
+
+		ul {
+			list-style:none;
+			-webkit-padding-start:0px;
+
+			li {
+				@include GTSectraBook;
+				color:$white;
+			}
+		}
+
+		a {
+			font-size:$em-val;
+		}
+
+		.agents,
+		.neighborhoods {
+			display:none;
+
+			&.active {
+				display:block;
+			}
+			i {
+				&.hidden {
+					display:none;
+				}
+			}
+		}
+
+	}
+
+}

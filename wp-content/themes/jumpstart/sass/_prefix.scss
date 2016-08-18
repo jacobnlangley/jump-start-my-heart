@@ -1,0 +1,51 @@
+//prefix declarations
+@mixin prefix($prop, $val) {
+  @if $wbkt == true {
+    -webkit-#{$prop}: #{$val};
+  }
+
+  @if $mz == true {
+    -moz-#{$prop}: #{$val};
+  }
+
+  @if $ms == true {
+    -ms-#{$prop}: #{$val};
+  }
+
+  @if $o == true {
+    -o-#{$prop}: #{$val};
+  }
+
+  #{$prop}: #{$val};
+}
+
+// prefix keyframes
+@mixin keyframes($name) {
+  @if $wbkt == true {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $mz == true {
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $ms == true {
+    @-ms-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $o == true {
+    @-o-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}

@@ -1,0 +1,218 @@
+.city {
+
+	.hero {
+		width: 100%;
+		height: 200px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		position: relative;
+
+		@media (min-width: $medmax) {
+			height: 300px;
+		}
+
+		@media (min-width: $largemax) {
+			height: 600px;
+		}
+
+		h1 {
+			position: absolute;
+			top: 50%;
+			left: 34px;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			margin: 0;
+			color: #fff;
+			font-size: $em*3.5;
+			@include GTSectraRegular;
+		}
+	}
+
+	.container-caption {
+		background-color: $bam-grn;
+		text-align: center;
+
+		.caption {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 3em .9375rem;
+			
+			@media (min-width: $medmax) {
+				padding: 5em .9375rem;
+			}
+
+			p {
+				margin: 0;
+				color: $white;
+				@include NeueHaasUnicaRegular;
+			}
+		}
+
+	}
+
+	.container-city-content {
+		max-width: $largemax;
+		margin: 0 auto;
+
+		h4 {
+			margin-top: 0;
+			margin-bottom: $em;
+			color: $bam-grn;
+			@include GTSectraRegular;
+			font-size: $em*1.6;
+		}
+
+	}
+
+	.container-city-blog {
+		padding-top: $em*2;
+		padding-bottom: $em*2;
+		position: relative;
+
+		&:last-child {
+			
+			div.dashed-border {
+				border: none;
+			}
+		}
+
+		.blog-image {
+			width: 100%;
+			height: 150px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+
+			@media (min-width: $medmax) {
+				height: 258px;
+			}
+		}
+
+		h4 {
+			margin-top: $em;
+
+			@media (min-width: 641px) {
+				margin-top: 0;
+			}
+		}
+		
+		div.dashed-border {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: 80%;
+			border-bottom: 1px dashed $bam-grn;
+		}
+
+		p {
+			@include GTSectraRegular;
+		}
+
+		.container-button {
+		
+			@media (min-width: $medmax) {
+				text-align: right;
+			}
+
+			a.ll-btn {
+				@include ll-btn($white, 1px solid $bam-grn, $border-radius, $text);
+				@include NeueHaasUnicaRegular;
+				display: inline-block;
+				padding: $em*0.5 $em*1.5;
+				font-size: $em;
+				margin-top: $em;
+			}
+
+		}
+
+		
+	}
+
+	.container-city-hoods {
+
+		@media(min-width: $medmax) {
+			padding-left: 5%;
+		}
+
+		.hood-title {
+			padding-top: $em*2;
+
+			a {
+				@include NeueHaasUnicaRegular;
+				font-size: $em*0.9;
+				display: block;
+				margin-top: $em*0.6;
+				text-decoration: underline;
+			}
+
+		}
+
+		a.hood-image {
+			display: block;
+			width: 100%;
+			height: 200px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			margin-bottom: $em*1.5;
+			text-align: center;
+			position: relative;
+
+			h5 {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				height: $em*3;
+				@include GTSectraRegular;
+				color: $white;
+				line-height: $em*4;
+				text-transform: uppercase;
+				background: rgba(102,102,102,1);
+				background: -moz-linear-gradient(top, rgba(71,71,71,0.1) 0%, rgba(58,58,58,0.1) 10%, rgba(38,38,38,0.3) 20%, rgba(18,18,18,0.4) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.6) 100%);
+				background: -webkit-linear-gradient(top, rgba(71,71,71,0.1) 0%, rgba(58,58,58,0.1) 10%, rgba(38,38,38,0.3) 20%, rgba(18,18,18,0.4) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.6) 100%);
+				background: -o-linear-gradient(top, rgba(71,71,71,0.1) 0%, rgba(58,58,58,0.1) 10%, rgba(38,38,38,0.3) 20%, rgba(18,18,18,0.4) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.6) 100%);
+				background: -ms-linear-gradient(top, rgba(71,71,71,0.1) 0%, rgba(58,58,58,0.1) 10%, rgba(38,38,38,0.3) 20%, rgba(18,18,18,0.4) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.6) 100%);
+				background: linear-gradient(to bottom, rgba(71,71,71,0.1) 0%, rgba(58,58,58,0.1) 10%, rgba(38,38,38,0.3) 20%, rgba(18,18,18,0.4) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.6) 100%);
+			}
+		}
+
+		.hood-featured-title {
+
+			h4 {
+				margin-bottom: 0;
+			}
+
+			h5 {
+				margin-top: 0;
+				margin-bottom: $em;
+				@include GTSectraRegular;
+				font-size: $em*1.2;
+			}
+		}
+
+		.hood-image-gallery {
+
+			div:nth-child(odd) {
+				padding-right: $em/2; 
+			}
+
+			div:nth-child(even) {
+				padding-left: $em/2; 
+			}
+
+			img {
+				width: 100%;
+				margin-bottom: $em;
+			}
+
+
+		}
+
+	}
+
+}

@@ -1,0 +1,80 @@
+.ll-btn {
+    @include ll-btn($bg-color, $border, $border-radius, $text-color);
+    padding:$em-val * 0.75 $em-val * 1;
+
+    &:hover {
+        background:$white;
+    }
+}
+
+.ll-btn-reversed {
+    @include ll-btn($white, $bam-grn, $border-radius, $bam-blk);
+    padding:$em-val * 0.75 $em-val * 1;
+
+    &:hover {
+        background:$ll-transparent;
+    }
+}
+
+
+.ll-btn-fx {
+	border: 1px solid $white;
+	color: $white;
+	overflow: hidden;
+
+    &:active {
+        border-color: $white;
+    	color: $white;
+
+        &:before {
+            color: $white;
+        }
+    }
+
+    &:hover {
+        background: #24b662;
+        color: $white;
+    }
+
+    &:before {
+        position: absolute;
+    	height: 100%;
+    	font-size: 125%;
+    	line-height: 3.5;
+    	color: #fff;
+    	-webkit-transition: all 0.3s;
+    	-moz-transition: all 0.3s;
+    	transition: all 0.3s;
+    }
+}
+
+.fx-fx:before {
+	left: 70%;
+	opacity: 0;
+	top: 0;
+}
+
+.fx-fx:hover:before {
+	left: 80%;
+	opacity: 1;
+}
+
+
+.btn-animate {
+    overflow:hidden;
+
+    .active {
+        &:before {
+            left:13%;
+            top:0;
+        }
+    }
+
+    &:after {
+        content: '';
+        position:absolute;
+        z-index:1;
+        transition:all 0.3s;
+    }
+
+}

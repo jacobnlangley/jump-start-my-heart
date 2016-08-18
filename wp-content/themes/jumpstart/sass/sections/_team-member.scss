@@ -1,0 +1,190 @@
+body.team {
+
+	.hero-title {
+		background: $bam-blk;
+		padding-top: $em*2;
+		padding-bottom: $em*2;
+		text-align: center;
+
+		h1 {
+			@include GTSectraRegular;
+			color: $white;
+		}
+
+		p {
+			@include NeueHaasUnicaRegular;
+			color: $white;
+		}
+
+		a.ll-btn {
+			@include ll-btn(transparent, 1px solid $bam-grn, $border-radius, $white);
+			@include NeueHaasUnicaRegular;
+			display: inline-block;
+			padding: $em*0.5 $em*2.5;
+			font-size: $em;
+			margin-top: $em;
+		}
+	}
+
+	.hero-image {
+		width: 100%;
+		height: 200px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+
+		@media (min-width: $medmax) {
+			height: 300px;
+		}
+
+		@media (min-width: $largemax) {
+			height: 600px;
+		}
+
+	}
+
+	.container-team-content {
+		max-width: $largemax*0.9;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: $em*2;
+		padding-bottom: $em*2;
+
+		h2 {
+			@include GTSectraRegular;
+			color: $bam-grn;
+		}
+
+		.team-content-indent {
+			max-width: $largemax*0.85;
+			margin-left: auto;
+			margin-right: auto;
+			@include NeueHaasUnicaRegular;
+		}
+
+	}
+
+	.feed-top {
+
+		@media (min-width: $medmax) {
+			padding-top: $em*2;
+			border-top: 1px dashed $bam-grn;
+		}
+
+		img {
+			margin-bottom: $em*2;
+		}
+		
+	}
+
+	.feed-bottom {
+
+		@media (min-width: $medmax) {
+			border-bottom: 1px dashed $bam-grn;
+		}
+
+		img {
+			margin-bottom: $em*2;
+		}
+		
+	}
+
+	.caption {
+		margin-bottom: $em*2;
+		
+		@media (min-width: $medmax) {
+			padding-left: 0.9375rem;
+			padding-right: 0.9375rem;
+			border-left: 1px dashed $bam-grn;
+		}
+
+		h3 {
+			@include NeueHaasUnicaRegular;
+			font-size: $em*1.1;
+			color: $bam-grn;
+			margin-bottom: $em*0.5;
+		}
+
+		p {
+			@include NeueHaasUnicaRegular;
+			font-size: $em*0.65;
+			color: $bam-grn;
+			margin-top: $em*0.5;
+		}
+
+	}
+
+	.team-featured-article {
+
+		.main-image {
+			width: 100%;
+			height: 250px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			margin-bottom: $em*2;
+
+			@media (min-width: $medmax) {
+				height: 408px;
+				margin-top: $em*1.1;
+			}
+		}
+
+	}
+
+	.container-review {
+		max-width: $largemax;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: $em*2;
+		padding-bottom: $em*2;
+		border-top: 1px solid #979797;
+
+		h5 {
+			@include NeueHaasUnicaLight;
+			margin: 0;
+			font-size: $em*1.1;
+		}
+	}
+
+	.content-review {
+		padding-top: $em*1.5;
+		padding-bottom: $em*1.5;
+		border-bottom: 1px solid #ddd;
+
+		h5, p {
+			margin: 0;
+		}
+
+		div:first-child p:first-child {
+			@include NeueHaasUnicaBold;
+			color: $bam-grn;
+			font-size: $em*0.9;
+		}
+
+		div:first-child p:last-child {
+			@include NeueHaasUnicaRegular;
+			font-size: $em*0.8;
+			font-weight: bold;
+		}
+
+		div:last-child p {
+			font-size: $em*0.9;
+		}
+	}
+
+	.leave-review {
+
+		@media (min-width: $medmax) {
+			text-align: right;
+		}
+
+		a {
+			display: inline-block;
+			margin-top: $em*2;
+			font-size: $em*0.9;
+			text-decoration: underline;
+		}
+	}
+
+}

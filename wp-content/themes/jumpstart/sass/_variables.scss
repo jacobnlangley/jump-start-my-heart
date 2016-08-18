@@ -1,0 +1,73 @@
+// Variables
+$link: #666;
+$linkHover: darken($link, 30%);
+
+$required: #f00;
+$white: #fff;
+$gray: #e9e9e9;
+$bam-blk:#231f20;
+$bam-grn:#199e4f;
+$bam-ltbrwn:#c8ad6f;
+
+$text: #323E44;
+
+$medium: 40.0625em;
+$large: 64.0625em;
+
+$px: 16px;
+$em: $px;
+$em-val:$em;
+$percent-val:1%;
+$time:1s;
+$radius:0px;
+$width:1px;
+
+// Durations
+$fastDuration: $time * 0.1 !default;
+$mediumDuration: $time * 0.3 !default;
+$slowDuration: $time * 0.5 !default;
+
+// Browser Prefixes
+$wbkt: true !default;
+$mz: false !default;
+$ms: false !default;
+$o: false !default;
+
+$sitemax: 1060px;
+
+$hugemax: 1499px;
+$xlmax: 1199px;
+$largemax: 1024px;
+$medmax: 768px;
+$smallmax: 500px;
+
+$iplusportrait: 414px;
+$ipluslandscape: 736px;
+$i6portrait: 375px;
+$i6landscape: 627px;
+$i5portrait: 320px;
+$i5landscape: 568px;
+
+$sitegutter: 5px;
+
+$base-padding: $em;
+$base-margin: $em;
+
+$ll-transparent:transparent;
+
+$bg-color:$ll-transparent;
+$border-width:$width;
+$border-style:solid;
+$background-color:$ll-transparent;
+$border-color:$white;
+$border-radius:$radius;
+
+$border: $border-width $border-style $border-color;
+
+/*$base-font:'Lato', sans-serif;*/
+$base-font-size:$em-val;
+$text-color:$white;
+$base-padding:$em-val;
+$border-radius:$radius * 2;
+
+$btn-height:$em-val * 3;

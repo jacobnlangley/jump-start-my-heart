@@ -1,0 +1,80 @@
+.citylist {
+
+	.full-width {
+		background:$bam-blk;
+
+		h1 {
+			@include GTSectraBook;
+			color:$gray;
+			text-align:center;
+		}
+
+		p {
+			color:$gray;
+			text-align:center;
+			font-size:$em * 1;
+		}
+	}
+
+	.filter-by, .filter-by-price, .icon-list{
+		list-style:none;
+
+		li {
+			display:inline;
+			cursor:pointer;
+
+			img:not(.wp-post-image) {
+				width:25px;
+				height:25px;
+			}
+		}
+	}
+
+	.neighborhoods-list {
+		list-style:none;
+		-webkit-padding-start:0;
+
+		li {
+			height:250px;
+			background-size:cover;
+			background-position:center center;
+			background-repeat:no-repeat;
+		}
+
+		& > li {
+			display:none;
+			margin-bottom:$em-val * 1;
+
+			&.active {
+				display:block;
+			}
+
+			.neighborhoods {
+				position:relative;
+				.icon-list {
+					position:absolute;
+					top:10px;
+					right:10px;
+				}
+				h3 {
+					width:100%;
+					position:absolute;
+					left:0;
+					top:132px;
+					padding:$em * 2 0;
+					text-align:center;
+					background-image: linear-gradient(
+						transparent, $bam-blk
+						);
+				}
+
+				a {
+					@include GTSectraBook;
+					color:$white;
+				}
+
+			}
+
+		}
+	}
+}

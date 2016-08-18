@@ -1,0 +1,71 @@
+// footer stuff only
+
+footer {
+	background:$gray;
+	height:275px;
+
+	@media (min-width: $i5portrait) and (max-width:$medmax){
+		padding:$em * 1 0;
+		height:auto;
+	}
+
+	.footer {
+		padding-top: $em * 2;
+		border-top: 1px solid $bam-blk;
+	}
+
+	.logo {
+
+		@media (min-width: $medmax) {
+			padding-left: 0;
+		}
+
+		img {
+
+			width:100px;
+			height:21px;
+
+			@media (min-width: $i5portrait) and (max-width:$medmax){
+				width:50%;
+				height:auto;
+			}
+
+		}
+		
+	}
+
+
+	.copyright {
+
+		@media (min-width: $medmax) {
+			padding-left: 0;
+		}
+
+		p {
+			font-size: $em*0.8;
+		}
+
+	}
+
+	.ll-footer-icons {
+		text-align:right;
+
+		@media (min-width: $medmax) {
+			padding-right: 0;
+		}
+
+		ul {
+
+			margin:0;
+
+			li {
+				display:inline;
+				margin-left:10px;
+
+				a {
+					font-size:$em-val * 0.8;
+				}
+			}
+		}
+	}
+}

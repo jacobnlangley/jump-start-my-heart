@@ -1,0 +1,109 @@
+//Font Mixins
+//Defaults if needed
+@mixin Helv { font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; }
+
+@mixin Arial { font-family: Arial, sans-serif; }
+
+@mixin Georgia { font-family: Georgia, Times, "Times New Roman", serif; }
+
+@mixin GTSectraBook {
+  font-family: 'GTSectraBook', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin GTSectraRegular {
+  font-family: 'GTSectraRegular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin NeueHaasUnicaLight {
+  font-family: 'NeueHaasUnicaLight', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@mixin NeueHaasUnicaRegular {
+  font-family: 'NeueHaasUnicaRegular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin NeueHaasUnicaBold {
+  font-family: 'NeueHaasUnicaBold', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+//Button mixin
+$Placeholder-Selectors: ();
+//These are the dynamic, user controlled properties of every instance of our button mixin.
+//the $extend: true arguement is passed to our statix mixin to check if the @extend directive should even run
+@mixin ll-btn($bg-color, $border, $border-radius, $text-color, $extend: true) {
+	@include ll-btn-static($extend);
+
+	background-color: $bg-color;
+    border: $border;
+    border-radius:$border-radius;
+    color:$text-color;
+    overflow:hidden;
+
+	&:hover {
+		background-color: darken($bg-color, 15%);
+	}
+}
+//These are the static non-changing properties of our button
+@mixin ll-btn-static($extend: true) {
+	$button-selector: map-get($Placeholder-Selectors, 'button');
+	//Arguement to dictate if the @extend process should be called
+	@if $extend == true {
+		@if $button-selector == null {
+      //Our unique ID var
+			$button-selector: unique-id();
+			$Placeholder-Selectors: map-merge($Placeholder-Selectors, ('button': $button-selector)) !global;
+			//Create our placeholder dynamically at the root of our directory with the name of our unique ID
+			@at-root %#{$button-selector} {
+				@include ll-btn-static(false);
+			}
+		}
+		@extend %#{$button-selector};
+		}
+		@else {
+
+            //Default non-changing styles
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+//CSS Transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin opacity-transition {
+    opacity:0;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+//Fix for accessibility on screen readers
+//display:none prevents screen readers from accessing the markup
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}

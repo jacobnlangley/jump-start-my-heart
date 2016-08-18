@@ -1,0 +1,290 @@
+body.home {
+
+    .content {
+
+    .hero {
+        height:600px;
+        position:relative;
+
+
+
+        @media (min-width:$medmax) and (max-width:$largemax) {
+            height:400px;
+        }
+
+        @media (min-width:$i6portrait) and (max-width:$medmax) {
+            height:300px;
+        }
+
+        @media (min-width:$i5portrait) and (max-width:$iplusportrait) {
+            height:200px;
+        }
+
+        h1 {
+            @include GTSectraBook;
+            font-size:2.5vw;
+            color:$white;
+            margin-top:$percent-val * 25;
+            padding-left:$em * 2.5;
+
+            @media (max-width:$largemax) {
+                margin-top:$em-val * 10;
+            }
+
+            @media (min-width:$smallmax) and (max-width:$medmax) {
+                margin-top:$percent-val * 30;
+                font-size:5vw;
+                text-align:center;
+            }
+
+            @media (max-width:$medmax) {
+                margin-top:$percent-val * 17;
+                font-size:4.5vw;
+                padding-left:0;
+            }
+
+            @media (min-width:$i5portrait) and (max-width:$iplusportrait) {
+                margin-top:$percent-val * 25;
+                font-size:6.5vw;
+                text-align:center;
+            }
+
+        }
+
+        .menu {
+            margin-top:$em-val * 15;
+            list-style:none;
+
+            @media (max-width:$largemax) {
+                margin-top:$em-val * 10;
+            }
+
+            @media (min-width:$i5portrait) and (max-width:$medmax) {
+                display:none;
+            }
+
+            li {
+                display:inline;
+                text-align:center;
+                padding:$em * 1 $em * 3.5;
+
+                &:first-of-type {
+                    padding-left:0;
+                }
+
+                a {
+                    color:$white;
+
+                    &:active {
+                        color:$bam-grn;
+                        text-decoration:underline;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .cta-container {
+        background:$bam-blk;
+
+
+        @media (min-width:$i5portrait) and (max-width:$medmax) {
+
+            .small-12.medium-12.columns.text-center {
+                background:lighten($bam-blk,2%);
+
+            }
+        }
+
+        h2 {
+            @include NeueHaasUnicaLight;
+            font-size:$em * 1.5;
+            color:$bam-grn;
+            margin-top:$em-val * 4;
+
+            @media (min-width:$i5portrait) and (max-width:$medmax) {
+                @include NeueHaasUnicaRegular;
+                font-size:$em * 1;
+                margin-top:$em-val * 1;
+                color:$bam-grn;
+            }
+        }
+
+        .cta-buckets {
+            padding-left:0;
+            padding-right:0;
+            height:$em * 15;
+
+            @media (min-width:$i5portrait) and (max-width:$iplusportrait) {
+                height:auto;
+            }
+
+
+            img {
+                height:80px;
+                margin-top:$em * 2;
+
+                @media (min-width:$i5portrait) and (max-width:$iplusportrait) {
+                    height:60px;
+                }
+            }
+
+            h3 {
+                @include GTSectraBook;
+                font-size:$em * 1.25;
+                color:$white;
+
+                @media (min-width:$i5portrait) and (max-width:$iplusportrait) {
+                    font-size:$em * 0.8;
+                }
+            }
+
+        }
+    }
+
+    .home-objects {
+
+        .small-12.medium-6.columns {
+            padding:0 0;
+            //background:$bam-grn;
+
+            &:nth-of-type {
+                background:$bam-ltbrwn;
+
+                p {
+                    text-align:right;
+
+                    @media (min-width:$i5portrait) and (max-width:$ipluslandscape) {
+                        //padding:$em * 0.5 $em * 1.0 $em * 1.0 $em * 1.0;
+                        text-align:left;
+                    }
+                }
+
+                a {
+                    float:right;
+
+                    @media (min-width:$i5portrait) and (max-width:$ipluslandscape) {
+                        float:none;
+                    }
+                }
+            }
+        }
+
+        .small-12.medium-6.columns:nth-of-type(2) {
+            background:$bam-ltbrwn;
+        }
+
+        img {
+            max-height:463px;
+        }
+
+
+        .team {
+            padding:$em * 4.5;
+            min-height:463px;
+
+            @media (min-width:$i6landscape) and (max-width:$medmax) {
+                padding:$em-val * 2 $em-val * 2.5;
+            }
+            @media (max-width:$medmax) {
+                min-height:347px;
+                padding:$em-val * 1.4 $em-val * 2.5;
+            }
+            @media (min-width:$i5portrait) and (max-width:$iplusportrait) {
+                padding:$em * 2.5;
+                min-height:370px;
+            }
+
+                h2 {
+                    @include GTSectraBook;
+                    font-size:$em * 1.5;
+                    color:$white;
+                    line-height:$em * 0.6;
+
+                    @media (min-width:$i6landscape) and (max-width:$medmax) {
+                        font-size:$em-val * 1.4;
+                    }
+
+                    @media (min-width:$i5portrait) and (max-width:$i6portrait) {
+                        font-size:$em-val * 1.2;
+                    }
+                }
+
+                p {
+                    color:$white;
+                    font-size:$em * 0.9;
+                    margin-bottom:$em-val * 1.5;
+
+                    @media (max-width:$medmax) {
+                        font-size:$em-val * 0.75;
+                    }
+                }
+
+        }
+
+        .why-choose {
+
+            background:$bam-grn;
+            padding:$em * 4.0;
+
+                h2 {
+                    color:$white;
+                }
+                p {
+                    color:$white;
+                    font-size:$em * 0.9;
+                }
+
+        }
+
+    }
+
+    .above-footer-hero {
+
+        .small-12.medium-12.columns {
+            min-height:480px;
+            @media (min-width:$i5portrait) and (max-width:$medmax) {
+                min-height:200px;
+            }
+        }
+
+        h3 {
+            @include GTSectraBook;
+            color:$white;
+            margin-top:$em * 11;
+            @media (min-width:$i5portrait) and (max-width:$medmax) {
+                margin-top:$em * 4;
+                font-size:4.5vw;
+            }
+        }
+    }
+
+    .home-objects {
+        & .medium-6 {
+            background:$bam-ltbrwn;
+
+            h2, p {
+                text-align:right;
+            }
+            a.ll-btn {
+                float:right;
+            }
+        }
+        & .medium-pull-6 {
+            background:$bam-grn;
+
+            h2, p {
+                text-align:left;
+            }
+
+            a.ll-btn {
+                float:none;
+            }
+        }
+
+    }
+
+    }
+
+}

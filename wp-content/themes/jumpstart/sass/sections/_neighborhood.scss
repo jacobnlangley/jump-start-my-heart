@@ -1,0 +1,328 @@
+.neighborhood {
+
+	.hero {
+		width: 100%;
+		height: 200px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		text-align: center;
+		position: relative;
+
+		@media (min-width: $medmax) {
+			height: 300px;
+		}
+
+		@media (min-width: $largemax) {
+			height: 600px;
+		}
+
+		.hero-content-bg {
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			background: -moz-linear-gradient(bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 99%, rgba(0,0,0,1) 100%);
+			background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 99%, rgba(0,0,0,1) 100%);
+			background: -o-linear-gradient(bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 99%, rgba(0,0,0,1) 100%);
+			background: -ms-linear-gradient(bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 99%, rgba(0,0,0,1) 100%);
+			background: linear-gradient(to top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 99%, rgba(0,0,0,1) 100%);
+
+			.hero-content {
+				max-width: 600px;
+				margin: 0 auto;
+				padding-top: $em*2.4;
+				padding-bottom: $em*2.4;
+			}
+
+			h1 {
+				margin-top: 0;
+				@include GTSectraRegular;
+				color: $white;
+			}
+
+			p {
+				margin: 0;
+				color: $white;
+				font-size: $em*0.8;
+			}
+		}
+
+	}
+
+	.container-content {
+		max-width: $largemax;
+		margin: 0 auto;
+	}
+
+	.container-caption {
+		background-color: $bam-grn;
+
+		.caption {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 3em .9375rem 2em;
+			text-align: center;
+			
+			@media (min-width: $medmax) {
+				padding: 5em .9375rem 3em;
+			}
+
+			h2 {
+				@include NeueHaasUnicaRegular;
+				margin-top: 0;
+				color: $white;
+			}
+
+			p {
+				margin: 0;
+				color: $white;
+			}
+
+			a.ll-btn {
+				@include ll-btn(transparent, 1px solid $white, $border-radius, $white);
+				@include NeueHaasUnicaRegular;
+				display: inline-block;
+				padding: $em*0.5 $em*1.5;
+				font-size: $em;
+				margin-top: $em*2.4;
+			}
+
+		}
+
+	}
+
+	.container-content-block-1 {
+		padding-top: $em*2;
+
+		.main-image {
+			width: 100%;
+			height: 250px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			margin-bottom: $em*2;
+
+			@media (min-width: $medmax) {
+				height: 420px;
+			}
+		}
+
+		.caption {
+			margin-bottom: $em*2;
+			
+			@media (min-width: $medmax) {
+				padding-left: 0.9375rem;
+				padding-right: 0.9375rem;
+				border-left: 1px dashed $bam-grn;
+			}
+
+			h3 {
+				@include NeueHaasUnicaRegular;
+				font-size: $em*1.1;
+				text-transform: uppercase;
+				color: $bam-grn;
+				margin-bottom: $em*0.5;
+			}
+
+			p {
+				@include NeueHaasUnicaRegular;
+				font-size: $em*0.65;
+				color: $bam-grn;
+				margin-top: $em*0.5;
+			}
+
+		}
+
+	}
+
+	.container-content-block-2 {
+
+		.caption {
+			margin-bottom: $em*2;
+
+			h2 {
+				@include GTSectraRegular;
+				color: $bam-grn;
+				font-size: $em*1.7;
+				margin-bottom: $em;
+			}
+
+			p {
+				@include GTSectraRegular;
+				font-size: $em*0.9;
+				margin-top: 0;
+			}
+
+		}
+
+	}
+
+	.container-content-block-4 {
+
+		.main-image {
+			width: 100%;
+			height: 250px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			margin-bottom: $em*2;
+
+			@media (min-width: $medmax) {
+				height: 258px;
+			}
+		}
+
+		.caption {
+			margin-bottom: $em*2;
+
+			@media (min-width: $medmax) {
+				text-align: right;
+			}
+			
+			h2 {
+				@include GTSectraRegular;
+				color: $bam-grn;
+				font-size: $em*1.7;
+				margin-bottom: $em;
+			}
+
+			p {
+				@include GTSectraRegular;
+				font-size: $em*0.9;
+				margin-top: 0;
+			}
+
+			a.ll-btn {
+				@include ll-btn($white, 1px solid $bam-grn, $border-radius, $text);
+				@include NeueHaasUnicaRegular;
+				display: inline-block;
+				padding: $em*0.5 $em*1.5;
+				font-size: $em;
+				margin-top: $em;
+			}
+
+		}
+
+	}
+
+	.container-content-block-5 {
+
+		.main-image {
+			width: 100%;
+			height: 250px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			margin-bottom: $em*2;
+
+			@media (min-width: $medmax) {
+				height: 258px;
+			}
+		}
+
+	}
+
+	.container-content-block-6 {
+
+		.caption {
+			margin-bottom: $em*2;
+
+			// &:before {
+			// 	content: "";
+			// 	position: absolute;
+			// 	top: 0;
+			// 	left: 0;
+			// 	width: 1px;
+			// 	height: 100%; // maybe js calculated if need border same height as other boxes/imgs 
+			// 	border-left: 1px dashed bam-grn;
+			// }
+			
+			@media (min-width: $medmax) {
+				padding-left: 0.9375rem;
+				padding-right: 0.9375rem;
+				border-left: 1px dashed $bam-grn;
+			}
+
+			h3 {
+				@include NeueHaasUnicaRegular;
+				font-size: $em*1.1;
+				text-transform: uppercase;
+				color: $bam-grn;
+				margin-bottom: $em*0.5;
+			}
+
+			p {
+				@include NeueHaasUnicaRegular;
+				font-size: $em*0.65;
+				color: $bam-grn;
+				margin-top: $em*0.5;
+			}
+
+		}
+
+	}
+
+	div[class*="container-content-block"] {
+
+		img {
+			margin-bottom: $em*2;
+		}
+	}
+
+	.container-neighborhood-blog {
+		padding-bottom: $em*2;
+
+		.content-neighborhood-blog {
+			margin-bottom: $em*2;
+		}
+
+		.caption {
+			margin-bottom: $em*2;
+
+			h2 {
+				@include GTSectraRegular;
+				color: $bam-grn;
+				font-size: $em*1.7;
+				margin-bottom: $em;
+			}
+
+			p {
+				@include GTSectraRegular;
+				font-size: $em*0.9;
+				margin-top: 0;
+			}
+
+			.container-button {
+
+				@media (min-width: $medmax) {
+					text-align: right;
+				}
+
+				a.ll-btn {
+					@include ll-btn($white, 1px solid $bam-grn, $border-radius, $text);
+					@include NeueHaasUnicaRegular;
+					display: inline-block;
+					padding: $em*0.5 $em*1.5;
+					font-size: $em;
+					margin-top: $em;
+				}
+
+			}
+
+		}
+
+		.blog-image {
+			width: 100%;
+			height: 250px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+
+			@media (min-width: $medmax) {
+				height: 258px;
+			}
+		}
+
+
+	}
+
+}
